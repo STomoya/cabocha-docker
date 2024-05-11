@@ -1,0 +1,16 @@
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    network_mode: host
+
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/app
+
+    shm_size: '8gb'
+    init: true
+    working_dir: /usr/src/app
